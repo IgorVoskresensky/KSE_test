@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragments.AddCarFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/adding_car"
+        android:fontFamily="@font/roboto_bold_italic"
+        android:textColor="#F37920"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/cvCarPhoto"
+        app:layout_constraintBottom_toTopOf="@+id/cvCarPhoto"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCarPhoto"
+        android:layout_width="302dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="50dp"
+        android:elevation="6dp"
+        android:backgroundTint="#2C1E1C"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:elevation="0dp"
+            app:cardCornerRadius="16dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/ivCarPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_begin="200dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_const_add_car"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddPhoto"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/bg_btn_add_car"
+            android:drawableStart="@drawable/ic_add_car_photo_btn"
+            android:fontFamily="@font/roboto_bold"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/add_photo"
+            android:textColor="@color/dark_brown"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilModel"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/dark_brown"
+            android:hint="@string/model"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAddPhoto">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etModel"
+                android:layout_width="290dp"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:background="@drawable/bg_btn_add_car"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="textPersonName"
+                android:textSize="16sp"
+                android:maxLength="20"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilManufacturer"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/dark_brown"
+            android:hint="@string/manufacturer_et"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilModel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etManufacturer"
+                android:layout_width="290dp"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:background="@drawable/bg_btn_add_car"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="textPersonName"
+                android:textSize="16sp"
+                android:maxLength="20"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTransmission"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/dark_brown"
+            android:hint="@string/transmission_et"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilManufacturer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTransmission"
+                android:layout_width="290dp"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:background="@drawable/bg_btn_add_car"
+                android:fontFamily="@font/roboto_medium"
+                android:inputType="textPersonName"
+                android:textSize="16sp"
+                android:maxLength="20"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/llPriceAndYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/tilTransmission"
+            app:layout_constraintEnd_toEndOf="@id/tilTransmission"
+            app:layout_constraintTop_toBottomOf="@id/tilTransmission"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPrice"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:textColorHint="@color/dark_brown"
+                android:hint="@string/price_et"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilTransmission">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPrice"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:background="@drawable/bg_btn_add_car"
+                    android:fontFamily="@font/roboto_medium"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp"
+                    android:maxLength="20"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="0dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilYear"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:textColorHint="@color/dark_brown"
+                android:hint="@string/year"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilTransmission">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etYear"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:background="@drawable/bg_btn_add_car"
+                    android:fontFamily="@font/roboto_medium"
+                    android:inputType="number"
+                    android:textSize="16sp"
+                    android:maxLength="20"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddCar"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:drawableStart="@drawable/ic_add_car_btn"
+            android:background="@drawable/bg_btn_add_car"
+            android:text="@string/done"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/dark_brown"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llPriceAndYear"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
